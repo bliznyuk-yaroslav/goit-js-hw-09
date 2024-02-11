@@ -1,0 +1,30 @@
+body{
+    width: 1440px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+.gallery{
+  max-width: 1128px;
+}
+li{
+  width: 360px;
+  height: 200px;
+}
+ .gallery-image{
+  width: 100%;
+  height: 100%;
+  transition: transform 0.1s ease-in-out;
+}
+.gallery-image:hover{
+  transform: scale(1.01);
+  outline: 2px solid rgba(247, 152, 28, 0.5);
+  cursor: pointer
+} 
