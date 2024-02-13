@@ -19,17 +19,16 @@ form.addEventListener('input', event => {
 const localFormData = localStorage.getItem(localStorageKey);
 if (localFormData) {
   const data = JSON.parse(localFormData);
-  if (data.email && data.message) {
-    form.email.value = data.email;
-    form.message.value = data.message;
-  }
+  form.email.value = data.email || '';
+  form.message.value = data.message || '';
+  
 }
 
 form.addEventListener('submit', event => {
   event.preventDefault();
   const object = {
-    email: event.currentTarget.elements.email.value,
-    message: event.currentTarget.elements.message.value,
+    email: event.currentTarget.elements.email.value.trim(),
+    message: event.currentTarget.elements.message.value.trim(),
   };
   if(object.email && object.message){
   console.log(object);
