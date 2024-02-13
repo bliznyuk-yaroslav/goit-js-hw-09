@@ -1,6 +1,7 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-"use strict"
+'use strict';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+('use strict');
 
 const images = [
   {
@@ -68,12 +69,14 @@ const images = [
   },
 ];
 
-const container = document.querySelector(".gallery");
+const container = document.querySelector('.gallery');
 container.innerHTML = createImagesMarcup(images);
 
 function createImagesMarcup(images) {
-  return images.map(({ preview, original, description }) =>
-  `<li class="gallery-item">
+  return images
+    .map(
+      ({ preview, original, description }) =>
+        `<li class="gallery-item">
 	<a class="gallery-link" href="${original}">
 		<img 
 			class="gallery-image" 
@@ -81,7 +84,12 @@ function createImagesMarcup(images) {
 			alt="${description}" 
 			/>
 	</a>
-</li>`).join("")
+</li>`
+    )
+    .join('');
 }
 
-const lightbox = new SimpleLightbox('.gallery-link', { captionsData: "alt", captionDelay: 300, });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
